@@ -1,0 +1,135 @@
+
+
+.navContainer {
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+
+    .logo {
+        display: block;
+        color: #fff;
+        font-size: 2.1rem;
+        padding: 0;
+        margin: auto 30px;
+        box-sizing: border-box;
+    }
+
+    .searchContainer {
+        box-sizing: border-box;
+
+        input, input:focus, input:active {
+            //color: #9e9e9e;
+            font-size: 1.2rem;
+            width: 300px;
+            box-sizing: border-box;
+            background: white;
+            border-width: 0;
+            border-radius: 10px;
+            margin: 10px 10px;
+            padding: 10px 10px;
+
+            box-shadow: none;
+           /* &::after{
+                background: null;
+            }*/
+        }
+    }
+
+    .space {
+        flex-grow: 1;
+    }
+
+    /*a button {
+        display: contents;
+        background: transparent;
+        border: transparent;
+    }*/
+
+    .profile {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        position: relative;
+
+        .name {
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+
+        img {
+            box-sizing: border-box;
+            margin: 0 10px;
+            $sz: 44px;
+            width: $sz;
+            height: $sz;
+            object-fit: cover;
+            border-radius: $sz/2;
+        }
+
+        .arrow {
+            box-sizing: border-box;
+            margin: 0 5px;
+        }
+
+        .cover {
+            position: absolute;
+            box-sizing: border-box;
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: background-color 0.3s; // время изсенения bgc цвета при :hover
+            cursor: pointer; // сделать курсор рукой
+
+            .dropdownMenu {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 100%;
+                width: 100%;
+                height: auto;
+                cursor: default;
+
+                .dropdownContent {
+                    display: flex;
+                    flex-direction: column;
+                    //border: 1px solid #CCCCCC;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+                    button {
+                        cursor: pointer; // сделать курсор рукой
+                        background: none;
+                        border: none;
+
+                        padding: 10px;
+
+                        &:hover {
+                            background: #eeeeee;
+                        }
+                    }
+
+                }
+            }
+
+            &:hover { // & - ссылка на текущий класс => .cover:hover
+                background: rgba(0,0,0,0.1);
+
+                .dropdownMenu {
+                    display: block;
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        /*&::after{
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #ff000030;
+        }*/
+    }
+}

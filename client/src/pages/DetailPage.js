@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useEffect, useState} from "react";
 import {useParams} from 'react-router-dom'
 import {useHttp} from "./hooks/http.hook";
 import {AuthContext} from "../context/AuthContext";
-import {Loader} from "../components/Loader";
+import {Loader} from "../components/common/Loader";
 import {LinkCard} from "../components/LinkCard";
 
 export const DetailPage = () => {
@@ -11,7 +11,7 @@ export const DetailPage = () => {
     const [link, setLink] = useState(null)
     const linkId = useParams().id
 
-    const getLink = useCallback( async () => {
+    const getLink = useCallback(async () => {
         try {
             const fetched = await request(`/api/link/${linkId}`, 'GET', null, {
                 Authorization: `Bearer ${token}`
@@ -20,7 +20,7 @@ export const DetailPage = () => {
         } catch (e) {}
     }, [token, linkId, request])
 
-    useEffect( () => {
+    useEffect(() => {
         getLink()
     }, [getLink])
 
@@ -30,7 +30,7 @@ export const DetailPage = () => {
 
     return (
         <>
-            { !loading && link && <LinkCard link={link} />}
+            { !loading && link && <LinkCard link={link} /> }
         </>
     )
 }

@@ -1,0 +1,125 @@
+
+
+.workInfoCard {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+
+
+
+    .item {
+        height: 25px;
+    }
+
+    .firstTitle {
+        margin-top: 0px;
+        font-size: 2rem;
+    }
+    .fieldDescription {
+        color: #888888;
+    }
+    .status {
+        padding: 5px;
+        background: #0ed14580;
+        border: 0px solid transparent;
+        border-radius: 5px;
+    }
+
+    .descriptionContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        :nth-child(n+2){
+            margin-left: 10px;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .size {
+            padding: 5px;
+            background: #0ed14580;
+            border: 0px solid transparent;
+            border-radius: 5px;
+        }
+        .info {
+            padding: 5px;
+            background: white;
+            border: 0px solid transparent;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    }
+
+
+    .btnContainer {
+        display: flex;
+        flex-direction: row;
+
+        .space {
+            width: 10px;
+        }
+
+        .btn {
+            display: grid;
+            grid-template-areas:
+            "i i"
+            "t t";
+            grid-template-rows: 3fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            width: 80px;
+            height: 60px;
+            background: #a68d64;
+            border: 0px solid transparent;
+            border-radius: 5px;
+            align-items: center;
+            justify-items: center;
+            grid-row: 1;
+
+            .info {
+                grid-area: i;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .title {
+                grid-area: t;
+                color: white;
+                font-size: 0.8rem;
+            }
+            .icon {
+                height: 20px;
+                width: 20px;
+            }
+            .count {
+                margin-left: 5px;
+                color: white;
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+.workCard {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+    .text {
+        p {
+            text-indent: 20px;
+        }
+    }
+}

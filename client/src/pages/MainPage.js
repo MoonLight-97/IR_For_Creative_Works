@@ -4,7 +4,7 @@ import {AuthContext} from "../context/AuthContext";
 import {Loader} from "../components/common/Loader";
 import {LinksList} from "../components/LinksList";
 
-export const LinksPage = () => {
+export const MainPage = () => {
     const [links, setLinks] = useState([])
     const {loading, request} = useHttp()
     const {token} = useContext(AuthContext)
@@ -18,12 +18,12 @@ export const LinksPage = () => {
         } catch (e) {}
     }, [token, request])
 
-    useEffect(() => {
+    useEffect( () => {
         fetchLinks()
     }, [fetchLinks])
 
     if (loading) {
-        return <Loader/>
+        return <Loader />
     }
 
     return (

@@ -11,15 +11,14 @@ export const AuthPage = () => {
         email: '', password: ''
     })
 
-    useEffect( () => {
-        console.log('Error', error)
+    useEffect(() => {
         message(error)
         clearError()
-    }, [error, message, clearError])
+    }, [error])
 
-    useEffect( () => {
+    useEffect(() => {
         window.M.updateTextFields()
-    },  [])
+    }, [])
 
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]: event.target.value })
@@ -27,22 +26,22 @@ export const AuthPage = () => {
 
     const registerHandler = async () => {
         try {
-            const data = await  request('/api/auth/register', 'POST', { ...form})
+            const data = await request('/api/auth/register', 'POST', {...form})
             message(data.message)
         } catch (e) {}
     }
 
     const loginHandler = async () => {
         try {
-            const data = await  request('/api/auth/login', 'POST', { ...form})
+            const data = await request('/api/auth/login', 'POST', {...form})
             auth.login(data.token, data.userId)
         } catch (e) {}
     }
 
     return (
         <div className="row">
-            <div className="col s6 offset-s3">
-                <h1>Сократи ссылку</h1>
+            <div style={styles.block} className="col s6 offset-s3">
+                <h1>Творческие работы</h1>
                 <div className="card blue darken-1">
                     <div className="card-content white-text">
                         <span className="card-title">Авторизация</span>
@@ -71,7 +70,7 @@ export const AuthPage = () => {
                                     value={form.password}
                                     onChange={changeHandler}
                                 />
-                                <label htmlFor="password">Пароль</label>
+                                <label htmlFor="email">Пароль</label>
                             </div>
 
                         </div>
@@ -92,9 +91,20 @@ export const AuthPage = () => {
                         >
                             Регистрация
                         </button>
+                        <button className="btn blue darken-1" style={styles.but} >Забыли пароль?</button>
                     </div>
                 </div>
             </div>
         </div>
     )
+}
+
+const styles = {
+    but: {
+        position:"absolute",
+        marginRight:"2%",
+        right:"0"
+    },
+    block:{position:"relative"
+    }
 }

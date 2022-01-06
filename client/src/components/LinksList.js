@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export  const  LinksList = ({ links }) => {
     if (!links.length) {
-        return <p className="center">Сссылок пока нет</p>
+        return <p className="center">Ссылок пока нет</p>
     }
 
     return (

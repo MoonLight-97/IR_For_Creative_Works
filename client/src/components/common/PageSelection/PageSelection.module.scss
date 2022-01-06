@@ -1,0 +1,38 @@
+
+
+
+// для тега <Link/> => <a/>
+a {
+    display: contents;
+    text-decoration: none;
+}
+
+$btn-size: 40px;
+.btns {
+    //display: flex;
+    //padding: 10px -10px;
+    //padding-left: -10px;
+
+    button {
+        margin: 10px 10px;
+        background: #bbb;
+        width: $btn-size;
+        height: $btn-size;
+        font-size: $btn-size/2;
+        border-width: 0;
+        border-radius: $btn-size/2;
+        color: white;
+    }
+    .first {
+        margin-left: 0;
+    }
+    .last {
+        margin-right: 0;
+    }
+    .selected {
+        background: #1e88e5;
+    }
+    .arrow {
+        padding-bottom: 1px; // фикс съезжания бэкграунда
+    }
+}

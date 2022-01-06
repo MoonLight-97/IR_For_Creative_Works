@@ -1,0 +1,47 @@
+
+
+
+.container {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .pageTitle {
+        font-size: 2.1rem;
+    }
+
+    .rules {
+
+    }
+
+    .fields {
+        display: flex;
+        flex-direction: column;
+        :nth-child(n) {
+            box-sizing: border-box;
+        }
+
+        .fieldTitle {
+            margin-top: 20px;
+        }
+
+        textarea {
+            border-radius: 5px;
+            min-height: 100px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background: #1e88e5;
+            border: 0px solid black;
+            border-radius: 5px;
+            color: white;
+        }
+    }
+
+    select {
+        display: block;
+    }
+}

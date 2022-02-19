@@ -12,7 +12,7 @@ export const CreatePage = () => {
     const message = useMessage()
     const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({
-        title: "", description: "", content: "", status: "В процессе"
+        title: "", description: "", content: "", status: "В процессе", size:"Мини", janr: "Рассказ"
     })
 
     useEffect(()=>{
@@ -54,6 +54,22 @@ export const CreatePage = () => {
                     <option>Заморожен</option>
                 </select>
             </div>
+            <div className={css.fieldTitle}>Рамзер работы</div>
+            <div>
+                <select name="size" value={form.size} onChange={changeHandler}> //тут 040-0036
+                    <option>Мини</option>
+                    <option>Средний</option>
+                    <option>Большой</option>
+                </select>
+            </div>
+            <div className={css.fieldTitle}>Тип работы</div>
+            <div>
+                <select name="janr" value={form.janr} onChange={changeHandler}> //тут 040-0036
+                    <option>Рассказ</option>
+                    <option>Проза</option>
+                    <option>Фанфик</option>
+                </select>
+            </div>
             <div><button onClick={createWork}>Создать</button>
             <button style={styles.but} >Загрузите docx документ</button></div>
         </div>
@@ -70,44 +86,3 @@ const styles = {
     }
 }
 
-
-/*
-export const CreatePage = () => {
-    const history = useHistory()
-    const auth = useContext(AuthContext)
-    const {request} = useHttp()
-    const [link, setLink] = useState('')
-
-    useEffect(() => {
-        window.M.updateTextFields()
-    }, [])
-
-    const pressHandler = async event => {
-        if (event.key === 'Enter') {
-            try {
-                const data = await request('/api/link/generate', 'POST', {from: link}, {
-                    Authorization: `Bearer ${auth.token}`
-                })
-                history.push(`/detail/${data.link._id}`)
-            } catch (e) {}
-        }
-    }
-
-    return (
-        <div className="row">
-            <div className="col s8 offset-s2" style={{paddingTop: '2rem'}}>
-                <div className="input-field">
-                    <input
-                        placeholder="Вставьте ссылку"
-                        id="link"
-                        type="text"
-                        value={link}
-                        onChange={e => setLink(e.target.value)}
-                        onKeyPress={pressHandler}
-                    />
-                    <label htmlFor="link">Введите ссылку</label>
-                </div>
-            </div>
-        </div>
-    )
-}*/

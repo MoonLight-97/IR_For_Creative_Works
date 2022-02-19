@@ -1,10 +1,10 @@
 import React from "react";
 import {Switch, Route, Redirect} from 'react-router-dom'
-import {MainPage} from "./pages/MainPage";
 import {LinksPage} from "./pages/LinksPage";
 import {CreatePage} from "./pages/CreatePage";
 import {DetailPage} from "./pages/DetailPage";
 import {AuthPage} from "./pages/AuthPage";
+import {ProfilePage} from "./pages/ProfilePage";
 import Works from "./components/Works/Works";
 import WorkInfo from "./components/Works/WorkCard/WorkInfo/WorkInfo";
 
@@ -26,6 +26,9 @@ export const useRoutes = isAuthenticated => {
                 </Route>
                 <Route path="/detail/:id">
                     <DetailPage />
+                </Route>
+                <Route path="/profile/:userId">
+                    <ProfilePage />
                 </Route>
                 <Redirect to="/works" />
             </Switch>

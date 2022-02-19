@@ -80,6 +80,10 @@
             justify-items: center;
             grid-row: 1;
 
+            &.active {
+                background: #1E88E5;
+            }
+
             .info {
                 grid-area: i;
                 display: flex;
@@ -121,5 +125,19 @@
         p {
             text-indent: 20px;
         }
+    }
+}
+
+.comments {
+    
+}
+
+.addComment {
+    textarea {
+        border-radius: 5px;
+        width: 100%;
+        min-height: 100px;
+        max-height: 300px;
+        resize: vertical;
     }
 }

@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import {NavLink, useHistory} from 'react-router-dom'
 import {AuthContext} from '../../context/AuthContext'
 import css from "./Navbar.module.scss"
-//import ava from process.env.PUBLIC_URL + "/wolf.jpg"
 
 
 export const Navbar = () => {
@@ -18,7 +17,7 @@ export const Navbar = () => {
     return (
         <nav>
             <div className={`nav-wrapper blue darken-1 ${css.navContainer}`}>
-                <span className={`${css.logo}`}>Творческие работы</span>
+                <NavLink to={`/works/`}><span className={`${css.logo}`}>Творческие работы</span></NavLink>
                 <div className={css.searchContainer}>
                     {/*<label htmlFor="search">Search</label>*/}
                     <input id="search" placeholder={"Поиск"}/>
@@ -40,9 +39,8 @@ export const Navbar = () => {
                     <div className={css.cover}>
                         <div className={css.dropdownMenu}>
                             <div className={css.dropdownContent}>
-                                <button>Профиль</button>
+                                <NavLink to={`/profile/${auth.userId}`}><button>Профиль</button></NavLink>
                                 <NavLink to={`/works/${auth.userId}`}><button>Мои работы</button></NavLink>
-                                <button>Настройки</button>
                                 <button onClick={logoutHandler}>Выйти</button>
                             </div>
                         </div>

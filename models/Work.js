@@ -5,6 +5,8 @@ const schema = new Schema({
     description: {type: String, required: true},
     content: {type: String, required: true},
     status: {type: String, required: true},
+    janr: {type: String, required: true},
+    size: {type: String, required: true},
     user: {type: Types.ObjectId, ref: "User"}
 })
 

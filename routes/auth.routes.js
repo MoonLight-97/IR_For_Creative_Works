@@ -77,11 +77,11 @@ router.post(
             if (!isMatch) {
                 return res.status(400).json({ message: 'Неверный пароль, попробуйте снова' })
             }
-
+            
             const token = jwt.sign(
-                { userId: user.id },
+                { userId: user._id },
                 config.get('jwtSecret'),
-                { expiresIn: '1h' }
+                { expiresIn: '24h' }
             )
 
             res.json({ token, userId: user.id })

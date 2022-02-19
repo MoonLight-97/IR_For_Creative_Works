@@ -7,6 +7,8 @@
     padding: 10px 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
+    position: relative;
+
     .title {
         font-size: 2rem;
         color: black;
@@ -15,4 +17,39 @@
     .fieldDescription {
         color: #888888;
     }
+
+    .deletePost {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        width: 32px;
+        height: 32px;
+        opacity: .8;
+        cursor: pointer;
+
+        transition: opacity .3s linear;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:before, &:after {
+            position: absolute;
+            left: 15px;
+    
+            content: '';
+            height: 33px;
+            width: 2px;
+            background-color: #1E88E5;
+        }
+
+        &:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
 }
